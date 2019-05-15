@@ -6,6 +6,11 @@ var db = require("../models");
 // console.log(db.burgers);
 // console.log(db.Burger);
 
+
+router.get("/", function (req, res) {
+  res.json(path.join(__dirname, "public/index.html"));
+});
+
 router.get("/api/burgers", function (req, res) {
   db.burgers.findAll({})
     .then(function (burgerData) {
